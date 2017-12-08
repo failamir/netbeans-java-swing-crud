@@ -1,4 +1,5 @@
-# netbeans-java-swing-crud
+# Project Pengelolaan Karyawan
+![gambar](1.png?raw=true)
 ### Langkah-langkah :
 1. Buka halaman ini lewat PC/Laptop, klik clone or download, klik download ZIP
 2. Ekstrak file yang sudah di download
