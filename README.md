@@ -19,7 +19,7 @@
 15. Run Project :)
 
 Penjelasan Package :
-com.ubp.config : File untuk membuka koneksi ke database
-com.ubp.manager : pengelolaan table untuk INSERT, SELECT, UPDATE, dan DELETE
-com.ubp.model : untuk penampilkan data dari table berbentuk OBJEK di dalam java
-com.ubp.tampilan : JFrame atau tampilan dari aplikasi
+- com.ubp.config : File untuk membuka koneksi ke database
+- com.ubp.manager : pengelolaan table untuk INSERT, SELECT, UPDATE, dan DELETE
+- com.ubp.model : untuk penampilkan data dari table berbentuk OBJEK di dalam java
+- com.ubp.tampilan : JFrame atau tampilan dari aplikasi
