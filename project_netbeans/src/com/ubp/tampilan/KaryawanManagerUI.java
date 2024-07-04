@@ -30,14 +30,14 @@ public class KaryawanManagerUI extends javax.swing.JFrame {
     }
     
     private void tampilDataTable(){
-        String[] kolom = {"ID","Nama","NIK","Gaji","Alamat"};
+        String[] kolom = {"ID","Nama","NIK","Kodepos","Alamat"};
         tableModel = new DefaultTableModel(null, kolom);
         for(KaryawanModel model : karyawanManager.tampilSemua()){
             String[] row = new String[kolom.length];
             row[0] = String.valueOf(model.getId());
             row[1] = model.getNama();
             row[2] = model.getNik();
-            row[3] = model.getGaji();
+            row[3] = model.getkodepos();
             row[4] = model.getAlamat();
             tableModel.addRow(row);
         }
@@ -54,7 +54,7 @@ public class KaryawanManagerUI extends javax.swing.JFrame {
     private void clearData(){
         tf_nama.setText("");
         tf_nik.setText("");
-        tf_gaji.setText("");
+        tf_kodepos.setText("");
         tf_alamat.setText("");
     }
 
@@ -73,7 +73,7 @@ public class KaryawanManagerUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tf_nik = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        tf_gaji = new javax.swing.JTextField();
+        tf_kodepos = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         tf_alamat = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -91,7 +91,7 @@ public class KaryawanManagerUI extends javax.swing.JFrame {
 
         jLabel3.setText("NIK");
 
-        jLabel4.setText("Gaji");
+        jLabel4.setText("Kodepos");
 
         jLabel5.setText("Alamat");
 
@@ -146,7 +146,7 @@ public class KaryawanManagerUI extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(tf_nik)
                     .addComponent(jLabel4)
-                    .addComponent(tf_gaji)
+                    .addComponent(tf_kodepos)
                     .addComponent(jLabel5)
                     .addComponent(tf_alamat)
                     .addComponent(tf_nama)
@@ -178,7 +178,7 @@ public class KaryawanManagerUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tf_gaji, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_kodepos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -198,17 +198,17 @@ public class KaryawanManagerUI extends javax.swing.JFrame {
 
     private void bt_simpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_simpanMouseClicked
         // TODO add your handling code here:
-        String nama = tf_nama.getText();
+        String nama_karyawan = tf_nama.getText();
         String nik = tf_nik.getText();
-        String gaji = tf_gaji.getText();
+        String kodepos = tf_kodepos.getText();
         String alamat = tf_alamat.getText();
         
-        if(!nama.isEmpty() && !nik.isEmpty() && !gaji.isEmpty() && !alamat.isEmpty()){
+        if(!nama_karyawan.isEmpty() && !nik.isEmpty() && !kodepos.isEmpty() && !alamat.isEmpty()){
             if(sedangDiEdit){
                 String id = (String) tbl_main.getValueAt(tbl_main.getSelectedRow(), 0);
-                karyawanManager.update(nama, nik, gaji, alamat, Integer.valueOf(id));
+                karyawanManager.update(nama_karyawan, nik, kodepos, alamat, Integer.valueOf(id));
             }else{
-                karyawanManager.insert(nama, nik, gaji, alamat);
+                karyawanManager.insert(nama_karyawan, nik, kodepos, alamat);
             }
             refresh();
         }else {
@@ -238,7 +238,7 @@ public class KaryawanManagerUI extends javax.swing.JFrame {
         KaryawanModel model = karyawanManager.byId(Integer.valueOf(id));
         tf_nama.setText(model.getNama());
         tf_nik.setText(model.getNik());
-        tf_gaji.setText(model.getGaji());
+        tf_kodepos.setText(model.getkodepos());
         tf_alamat.setText(model.getAlamat());
     }//GEN-LAST:event_tbl_mainMouseClicked
 
@@ -289,7 +289,7 @@ public class KaryawanManagerUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbl_main;
     private javax.swing.JTextField tf_alamat;
-    private javax.swing.JTextField tf_gaji;
+    private javax.swing.JTextField tf_kodepos;
     private javax.swing.JTextField tf_nama;
     private javax.swing.JTextField tf_nik;
     // End of variables declaration//GEN-END:variables

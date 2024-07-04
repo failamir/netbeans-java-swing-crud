@@ -30,7 +30,7 @@ public class KaryawanManager {
     }
     
     public List<KaryawanModel> tampilSemua(){
-        String namaTable = "karyawan";
+        String namaTable = "biodata_karyawan";
         String query = "SELECT * FROM "+namaTable;
         KaryawanModel model;
         List<KaryawanModel> list = new ArrayList<>();
@@ -41,9 +41,9 @@ public class KaryawanManager {
             while(hasilQuery.next()){
                 model = new KaryawanModel();
                 model.setId(hasilQuery.getInt("id"));
-                model.setNama(hasilQuery.getString("nama"));
+                model.setNama(hasilQuery.getString("nama_karyawan"));
                 model.setNik(hasilQuery.getString("nik"));
-                model.setGaji(hasilQuery.getString("gaji"));
+                model.setkodepos(hasilQuery.getString("kodepos"));
                 model.setAlamat(hasilQuery.getString("alamat"));
                 list.add(model);
             }            
@@ -55,7 +55,7 @@ public class KaryawanManager {
     }
 
     public KaryawanModel byId(int id){
-        String namaTable = "karyawan";
+        String namaTable = "biodata_karyawan";
         String query = "SELECT * FROM "+namaTable+" WHERE id = "+id;
         KaryawanModel model = null;
         try {
@@ -65,9 +65,9 @@ public class KaryawanManager {
             while(hasilQuery.next()){
                 model = new KaryawanModel();
                 model.setId(hasilQuery.getInt("id"));
-                model.setNama(hasilQuery.getString("nama"));
+                model.setNama(hasilQuery.getString("nama_karyawan"));
                 model.setNik(hasilQuery.getString("nik"));
-                model.setGaji(hasilQuery.getString("gaji"));
+                model.setkodepos(hasilQuery.getString("kodepos"));
                 model.setAlamat(hasilQuery.getString("alamat"));
             }            
             return model;
@@ -77,9 +77,9 @@ public class KaryawanManager {
         }
     }    
     
-    public boolean insert(String nama, String nik, String gaji, String alamat) {
-        String namaTable = "karyawan";
-        String query = "INSERT INTO "+namaTable+" (`nama`, `nik`, `gaji`, `alamat`) VALUES ('"+nama+"', '"+nik+"','"+gaji+"', '"+alamat+"');";
+    public boolean insert(String nama_karyawan, String nik, String kodepos, String alamat) {
+        String namaTable = "biodata_karyawan";
+        String query = "INSERT INTO "+namaTable+" (`nama_karyawan`, `nik`, `kodepos`, `alamat`) VALUES ('"+nama_karyawan+"', '"+nik+"','"+kodepos+"', '"+alamat+"');";
         
         try {
             PreparedStatement preparedStatement = koneksiDatabase.prepareStatement(query);
@@ -91,9 +91,9 @@ public class KaryawanManager {
         }
     }
     
-    public boolean update(String nama, String nik, String gaji, String alamat, int id) {
-        String namaTable = "karyawan";
-        String query = "UPDATE "+namaTable+" SET `nama`='"+nama+"', `nik`='"+nik+"', `gaji`='"+gaji+"', `alamat`='"+alamat+"'  WHERE  `id`="+id+";";
+    public boolean update(String nama_karyawan, String nik, String kodepos, String alamat, int id) {
+        String namaTable = "biodata_karyawan";
+        String query = "UPDATE "+namaTable+" SET `nama_karyawan`='"+nama_karyawan+"', `nik`='"+nik+"', `kodepos`='"+kodepos+"', `alamat`='"+alamat+"'  WHERE  `id`="+id+";";
         
         try {
             PreparedStatement preparedStatement = koneksiDatabase.prepareStatement(query);
@@ -106,7 +106,7 @@ public class KaryawanManager {
     }
     
     public boolean delete(String id) {
-        String namaTable = "karyawan";
+        String namaTable = "biodata_karyawan";
         String query = "DELETE FROM "+namaTable+" WHERE id = "+id;
         
         try {

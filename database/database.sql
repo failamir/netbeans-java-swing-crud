@@ -15,22 +15,22 @@ CREATE DATABASE IF NOT EXISTS `project_data_karyawan` /*!40100 DEFAULT CHARACTER
 USE `project_data_karyawan`;
 
 
--- Dumping structure for table project_data_karyawan.karyawan
-CREATE TABLE IF NOT EXISTS `karyawan` (
+-- Dumping structure for table project_data_karyawan.biodata_karyawan
+CREATE TABLE IF NOT EXISTS `biodata_karyawan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nama` varchar(50) DEFAULT NULL,
+  `nama_karyawan` varchar(50) DEFAULT NULL,
   `nik` varchar(50) DEFAULT NULL,
-  `gaji` varchar(50) DEFAULT NULL,
+  `kodepos` varchar(50) DEFAULT NULL,
   `alamat` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
--- Dumping data for table project_data_karyawan.karyawan: ~0 rows (approximately)
-/*!40000 ALTER TABLE `karyawan` DISABLE KEYS */;
-INSERT INTO `karyawan` (`id`, `nama`, `nik`, `gaji`, `alamat`) VALUES
+-- Dumping data for table project_data_karyawan.biodata_karyawan: ~0 rows (approximately)
+/*!40000 ALTER TABLE `biodata_karyawan` DISABLE KEYS */;
+INSERT INTO `biodata_karyawan` (`id`, `nama_karyawan`, `nik`, `kodepos`, `alamat`) VALUES
 	(7, 'Yazied DA', '123456', '8400000', 'Karawang'),
 	(8, 'Ucok', '654321', '9200000', 'Klari');
-/*!40000 ALTER TABLE `karyawan` ENABLE KEYS */;
+/*!40000 ALTER TABLE `biodata_karyawan` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

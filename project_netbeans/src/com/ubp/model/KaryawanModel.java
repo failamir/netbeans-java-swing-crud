@@ -12,9 +12,9 @@ package com.ubp.model;
 public class KaryawanModel {
     
     private int id;
-    private String nama;
+    private String nama_karyawan;
     private String nik;
-    private String gaji;
+    private String kodepos;
     private String alamat;
 
     public int getId() {
@@ -26,11 +26,11 @@ public class KaryawanModel {
     }
 
     public String getNama() {
-        return nama;
+        return nama_karyawan;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setNama(String nama_karyawan) {
+        this.nama_karyawan = nama_karyawan;
     }
 
     public String getNik() {
@@ -41,12 +41,12 @@ public class KaryawanModel {
         this.nik = nik;
     }
 
-    public String getGaji() {
-        return gaji;
+    public String getkodepos() {
+        return kodepos;
     }
 
-    public void setGaji(String gaji) {
-        this.gaji = gaji;
+    public void setkodepos(String kodepos) {
+        this.kodepos = kodepos;
     }
 
     public String getAlamat() {

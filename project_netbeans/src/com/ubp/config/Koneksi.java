@@ -21,7 +21,7 @@ public class Koneksi {
     public static Connection koneksiDB() {
         if(mysqlkonek==null){
             try {
-                String nama_database = "project_data_karyawan"; // nama database
+                String nama_database = "project_data_karyawan"; // nama_karyawan database
                 String DB="jdbc:mysql://localhost:3306/"+nama_database;
                 String user="root"; // user 
                 String pass=""; // password database
