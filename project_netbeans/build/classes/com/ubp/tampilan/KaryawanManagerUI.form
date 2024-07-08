@@ -31,7 +31,7 @@
                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="tf_nik" alignment="0" max="32767" attributes="0"/>
                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="tf_kodepos" alignment="0" max="32767" attributes="0"/>
+                  <Component id="tf_gaji" alignment="0" max="32767" attributes="0"/>
                   <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="tf_alamat" alignment="0" max="32767" attributes="0"/>
                   <Component id="tf_nama" alignment="0" max="32767" attributes="0"/>
@@ -67,7 +67,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tf_kodepos" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_gaji" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -112,10 +112,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Kodepos"/>
+        <Property name="text" type="java.lang.String" value="Gaji"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tf_kodepos">
+    <Component class="javax.swing.JTextField" name="tf_gaji">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
